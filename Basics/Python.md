@@ -14,12 +14,14 @@ Heading 1 Normal Text Heading 1 Normal Text Heading 1 Normal Text
 ### Road Map to Python
 
 ![Python Roadmap](./image1.jpeg)
+![Python Library 1](./LifeisShort.jpeg)
 
 ### 
 
 ### DataScience Roadmap
 
 ![Data Science Roadmap](./image2.jpeg)
+
 
 # Core Areas
 

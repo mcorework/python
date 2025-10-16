@@ -21,7 +21,7 @@
 - [📘 Day 2](#-day-2)
   - [Built in functions](#built-in-functions)
   -Links
-    <a href="https://www.youtube.com/watch?v=QUT1VHiLmmI&t=1041s" target="_blank">Asabeneh Yetayeh</a><br>
+    <a href="https://www.youtube.com/watch?v=QUT1VHiLmmI&t=1041s" target="_blank">Kieth Galli - NumPy -Video</a><br>
   - [Variables](#variables)
     - [Declaring Multiple Variable in a Line](#declaring-multiple-variable-in-a-line)
   - [Data Types](#data-types)
