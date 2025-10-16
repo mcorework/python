@@ -13,15 +13,13 @@ Heading 1 Normal Text Heading 1 Normal Text Heading 1 Normal Text
 
 ### Road Map to Python
 
-![](media/image2.png){width="5.750719597550306in"
-height="7.161458880139983in"}
+![Python Roadmap](./image1.jpeg)
 
 ### 
 
 ### DataScience Roadmap
 
-![](media/image1.png){width="5.814317585301837in"
-height="6.322830271216098in"}
+![Data Science Roadmap](./image2.jpeg)
 
 # Core Areas
 
