@@ -53,11 +53,9 @@ Heading 1 Normal Text Heading 1 Normal Text Heading 1 Normal Text
 
 **Links:**
 
--   [[KeithGalli NumPy Github \>
-    link]{.underline}](https://github.com/KeithGalli/NumPy)
+-   [KeithGalli NumPy Github](https://www.youtube.com/watch?v=QUT1VHiLmmI&t=1041s)
 
--   [[KiethGalli NumPy Youtube \>
-    link]{.underline}](https://www.youtube.com/watch?v=QUT1VHiLmmI&t=778s)
+-   [NumPy Routines](https://numpy.org/doc/stable/reference/routines.math.html)
 
 ## OOP
 
