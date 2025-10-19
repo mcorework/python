@@ -176,6 +176,41 @@ bios_new[['name','born_year']]
 bios_new.to_csv('./data/bios_new.csv', index=False)
 bios['height_category'] = bios['height_cm'].apply(lambda x: 'Short' if x < 165 else ('Average' if x < 185 else 'Tall'))
 
+def categorize_athlete(row):
+    if row['height_cm'] < 175 and row['weight_kg'] < 70:
+        return 'Lightweight'
+    elif row['height_cm'] < 185 or row['weight_kg'] <= 80:
+        return 'Middleweight'
+    
+    else:
+        return 'Heavyweight'
+    
+bios['Category'] = bios.apply(categorize_athlete, axis=1)
+
 # =============================================================================================
 #                              Merging & Concatenating Data
 # =============================================================================================  
+nocs = pd.read_csv('./data/noc_regions.csv')
+bios_new = pd.merge(bios, nocs, left_on='born_country', right_on='NOC', how='left')
+bios_new.rename(columns={'region': 'born_country_full'}, inplace=True)
+usa = bios[bios['born_country']=='USA'].copy()
+gbr = bios[bios['born_country']=='GBR'].copy()
+new_df = pd.concat([usa,gbr])
+combined_df = pd.merge(results, bios, on='athlete_id', how='left')
+
+# =============================================================================================
+#                              Handling Null Values
+# =============================================================================================  
+coffee.loc[[2,3], 'Units Sold'] = np.nan
+# Make sure to set this to your Units Sold column if you want these changes to stick
+coffee['Units Sold'].fillna(coffee['Units Sold'].mean()) 
+# coffee['Units Sold'] = coffee['Units Sold'].interpolate()
+coffee['Units Sold'].interpolate()
+coffee.dropna(subset=['Units Sold']) # Use inplace=True if you want to update the coffee df
+coffee[coffee['Units Sold'].notna()]
+
+# =============================================================================================
+#                              Aggregating Data
+# =============================================================================================  
+bios['born_city'].value_counts()
+
