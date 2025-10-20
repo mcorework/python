@@ -58,7 +58,7 @@ class Polygon:
         for i in range(self.sides):
             turtle.forward(self.size)
             turtle.right(180-self.angle)
-        turtle.done()
+       
 # Not the class method
 def draw_function(sides, size, angle, line_thickness, color):
     turtle.color(color)
@@ -73,5 +73,22 @@ pentagon = Polygon(5,"Pentagon")
 octagon = Polygon(8,"Octagon", color="red")
 
 #draw_function(6,20,108,4,"red")
-octagon.draw()
+#octagon.draw()
 
+# =============================================================================================
+#                              INHERITANCE AND SUBCLASSING
+# =============================================================================================
+
+class Square(Polygon):
+	def __init__(self, size=100, color="black", line_thickness=3):
+		super().__init__(4, "Square", size, color, line_thickness)
+
+    #Ovoeride super class method
+	def draw(self):
+		turtle.begin_fill()
+		super().draw()
+		turtle.end_fill()    
+
+square = Square(color="blue")
+square.draw()
+turtle.done()
