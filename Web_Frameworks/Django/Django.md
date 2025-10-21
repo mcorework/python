@@ -18,6 +18,26 @@ This repository includes:
 
 ---
 
+## 🔗 Useful Links
+
+- [Django Official Documentation](https://docs.djangoproject.com/en/stable/)
+- [Django Tutorial (MDN)](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django)
+- [Real Python Django Guide](https://realpython.com/tutorials/django/)
+- [Full Stack Python: Django](https://www.fullstackpython.com/django.html)
+
+### 📚 My Reference URLs
+
+- [Django Installation & Setup Notes](https://docs.djangoproject.com/en/stable/topics/install/)
+- [Understanding Django Apps vs Projects](https://learndjango.com/tutorials/django-projects-vs-apps)
+- [Django ORM Cheat Sheet](https://djangobook.com/mdj2-django-orm-cheat-sheet/)
+- [Django Template Language](https://docs.djangoproject.com/en/stable/ref/templates/language/)
+- [Static Files Management](https://docs.djangoproject.com/en/stable/howto/static-files/)
+
+### 📚 Other Reference URLs
+
+- [Django Youtube Video -Tech with Tim](https://www.youtube.com/watch?v=nGIg40xs9e4&t=99s/)
+
+
 ## 🧠 Learning Goals
 
 - Understand the **Model-View-Template (MVT)** architecture  
