@@ -11,12 +11,23 @@ This repo documents my progress and provides quick references for setup, concept
 It handles much of the hassle of web development so you can focus on writing your app without reinventing the wheel.  
 It is used in many popular sites like **Instagram**, **Spotify**, and **Dropbox**.
 
-### ⚙️ Few Installation Commands
+### ⚙️ Installation Commands
 
 1. `pip install django` — install the Django package  
 2. `django-admin startproject demo` — create a new Django project  
 3. `python manage.py startapp myapp` — create a stand-alone app inside the Django project  
 4. `python manage.py runserver` — run localhost at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+
+### ⚙️ Model Setup Commands
+
+1. `python manage.py makemigrations` — model setup
+2. `python manage.py migrate`  - updates the database
+3.  superuser - msr, password- ray, msr@gmail.com
+4.  python manage.py createsuperuser
+5.  http://127.0.0.1:8000/admin/login/?next=/admin/
+6.  http://127.0.0.1:8000/todos/
+
+
 
 ### 📘 This Repository Includes
 - Tutorials and personal notes  
