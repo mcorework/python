@@ -47,6 +47,27 @@ This repository includes:
 - Manage **forms, authentication, and admin interface**  
 - Deploy Django applications  
 
+
+## 🔗 Useful Links & References
+
+### 🏗️ Setup & Configuration
+- [Official Django Installation Guide](https://docs.djangoproject.com/en/stable/topics/install/)
+- [Python Virtual Environments](https://realpython.com/python-virtual-environments-a-primer/)
+
+### 🧠 Core Concepts
+- [Django MVT Architecture Explained](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction)
+- [Understanding URL Routing in Django](https://learndjango.com/tutorials/django-url-patterns-and-view-functions)
+- [Models and ORM](https://docs.djangoproject.com/en/stable/topics/db/models/)
+
+### 🎨 Templates & Frontend
+- [Django Template Language Reference](https://docs.djangoproject.com/en/stable/ref/templates/language/)
+- [Static Files and Media Setup](https://docs.djangoproject.com/en/stable/howto/static-files/)
+
+### 🧩 Advanced Topics
+- [Django REST Framework](https://www.django-rest-framework.org/)
+- [Django Signals and Middleware](https://docs.djangoproject.com/en/stable/topics/signals/)
+- [Deploying Django to Render](https://render.com/docs/deploy-django)
+- [Security Best Practices](https://docs.djangoproject.com/en/stable/topics/security/)
 ---
 
 ## ⚙️ Setup Instructions
