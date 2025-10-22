@@ -58,7 +58,7 @@ It is used in many popular sites like **Instagram**, **Spotify**, and **Dropbox*
 
 ### 📚 Other Reference URLs
 
-- [Django YouTube Video — Tech With Tim — Learn Django in 20 Minutes!!](https://www.youtube.com/watch?v=nGIg40xs9e4&t=99s/)
+- [FAstAPI with Chai our code -Hitesh Choudhary YouTube Video — FastAPI crash course in Hindi!!](https://www.youtube.com/watch?v=foGklduxhM0/)
 
 ---
 
