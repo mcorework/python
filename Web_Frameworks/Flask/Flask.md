@@ -15,6 +15,9 @@ It is designed to be simple, modular, and scalable, allowing developers to quick
 2. `virtualenv env` — install the virtual environment  
 3. `source env/bin/activate` — activate the virtual environment 
 4. `pip install flask-sqlalchemy` — install flask
+4. `python app.py` — to activate the web server
+5. `https://www.heroku.com/' create a free account and host your app
+6. `pip freeze > requirements.txt'  to create a dependency file.
 
 
 ### 📚 My Reference URLs
@@ -28,6 +31,8 @@ It is designed to be simple, modular, and scalable, allowing developers to quick
 ### 📚 Other Reference URLs
 
 - [Learn Flask for Python - freeCodeCamp.org](https://www.youtube.com/watch?v=Z1RJmh_OqeA/)
+- [Tech with Tim Flask Tutorial #7 - Using SQLAlchemy Database] (https://www.youtube.com/watch?v=uZnp21fu8TQ&list=PLzMcBGfZo4-n4vJJybUVV3Un_NFS5EOgX&index=7)
+- [Github - Flask Introduction](https://github.com/jakerieger/FlaskIntroduction/tree/master/)
 
 ### ✨ Key Features
 
