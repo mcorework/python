@@ -85,7 +85,7 @@ import mymodule
 greetings.say_hello("Madhav")
 # Output: Hello, Madhav!
 
-P y t h o n N o te s
+Python Notes :::
 
 Packages in Python
 A package is a collection of modules organized in directories (folders) with an __init__.py
