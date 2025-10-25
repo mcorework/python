@@ -14,9 +14,6 @@ Example:
     fruits = ["apple", "banana", "cherry"]
     mixed = [1, "apple", 3.14, True]
 
--------------------------------------------
-🔹 1. Creating Lists
--------------------------------------------
 """
 
 # create list 
@@ -35,7 +32,7 @@ print(my_list3)
 print(type(my_list3))  
 
 
-# Access list - Indexing 
+# Access list - Indexing (Access only one item in given index)
 list1 = [10, 20, 30, 40, 50]
 # index: 0   1   2   3   4
 # index:-5  -4  -3   -2  -1
@@ -53,7 +50,7 @@ print(list1[-1])
 print(list1[-2])  
 
 
-# list - slicing 
+# list - slicing (Can access range of items from the list of items)
 
 list2 = [10, 20, 30, 40, 50, 60, 100]
 # index: 0   1   2   3   4   5    6

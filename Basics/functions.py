@@ -28,7 +28,7 @@ def add3numbers(a,b,c):   #parameter (a,b,c)
 add3numbers(5,3, 100)    #arguments (5,3,100) 
 
 
-function with return statement 
+#function with return statement 
 def add2num(a,b):
     return a+b 
     # return a-b    after return statement function ends 
