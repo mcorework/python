@@ -14,6 +14,7 @@ Contents
 -- Basic Syntax
 -- Varibles
 -- Data Types
+-- Operators
 -- Conditions
 -- Loops
 -- Exceptions
@@ -38,6 +39,7 @@ Python emphasizes **code readability**, uses **indentation instead of braces**, 
 ### 📚 Other Reference URLs
 
 - [Modules in Python - Rishabh Mishra](https://www.youtube.com/watch?v=6mw_lWlHCYk/)
+- [Modules in Python - Rishabh Mishra Series](https://www.youtube.com/watch?v=AuFbqBLx1jI&list=PLdOKnrf8EcP384Ilxra4UlK9BDJGwawg9&index=15/)
 - [Python Tutorials by Rishabh](https://drive.google.com/drive/folders/1FaOTxdEBav302XTvs5g1deQLJqM6oHDU/)
 - [Github - Python Tutorials - Rishabh Mishra](https://github.com/rishabhnmishra/python_tutorial_notes/)
 
