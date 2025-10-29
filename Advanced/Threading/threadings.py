@@ -27,6 +27,7 @@ which means Python threads are not truly parallel for CPU-heavy work.
 
 ### 3. Links
 [Python Threading - Neural Line](https://www.youtube.com/watch?v=A_Z1lgZLSNc)
+[Core Shafer - Python Threading](https://www.youtube.com/watch?v=IEEhzQoKtQU&t=2009s)
 which means Python threads are not truly parallel for CPU-heavy work.
 
 """
