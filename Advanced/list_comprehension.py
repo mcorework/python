@@ -63,7 +63,6 @@ print("Basic loop:", my_list)
 # ✅ List comprehension equivalent
 print("List comprehension:", [n for n in nums])
 
-
 # ✅ Square each number
 my_list = []
 for n in nums:
@@ -75,7 +74,6 @@ print("Squares (comprehension):", [n * n for n in nums])
 
 # Using map + lambda
 print("Squares (map+lambda):", list(map(lambda n: n * n, nums)))
-
 
 # ✅ Get even numbers only
 my_list = []
@@ -90,7 +88,6 @@ print("Evens (comprehension):", [n for n in nums if n % 2 == 0])
 # Using filter + lambda
 print("Evens (filter+lambda):", list(filter(lambda n: n % 2 == 0, nums)))
 
-
 # ✅ Create (letter, num) pairs using nested loops
 my_list = []
 for letter in 'abcd':
@@ -101,13 +98,13 @@ print("Pairs (loop):", my_list)
 # List comprehension equivalent
 print("Pairs (comprehension):", [(letter, num) for letter in 'abcd' for num in range(4)])
 
-
 # -------------------------------
 # 🧾 DICTIONARY COMPREHENSIONS
 # -------------------------------
 
 names = ['Bruce', 'Clark', 'Peter', 'Logan', 'Wade']
 heros = ['Batman', 'Superman', 'Spiderman', 'Wolverine', 'Deadpool']
+print(zip(names, heros))
 
 # ✅ Create dictionary using loop
 my_dict = {}
