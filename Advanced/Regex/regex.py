@@ -24,7 +24,7 @@ Python provides the built-in **`re`** module for working with regular expression
 ^       - Beginning of a String
 $       - End of a String
 
-[]      - Matches Characters in brackets
+[]      - Character Set (Matches Characters in brackets)
 [^ ]    - Matches Characters NOT in brackets
 |       - Either Or
 ( )     - Group
@@ -77,6 +77,13 @@ pat
 bat
 '''
 
+
+emails = '''
+CoreyMSchafer@gmail.com
+corey.schafer@university.edu
+corey-321-schafer@my-work.net
+'''
+
 sentence = 'Start a sentence and then bring it to an end'
 
 pattern = re.compile(r'start', re.I) #compile methods separates the patterns and assigns to a variable
@@ -90,7 +97,7 @@ pattern = re.compile(r'coreyms\.com') #searches periods
 
 
 # --------------------------------------------------------
-# 🔹 Example 1 — Basic 1
+# 🔹 Segment 1 — Basic
 # --------------------------------------------------------
 # '.' is a special regex character, so escape it with '\.'
 pattern = re.compile(r'\.')
@@ -117,7 +124,7 @@ pattern = re.compile(r'\s')
 pattern = re.compile(r'\S')
 
 # --------------------------------------------------------
-# 🔹 Example 2 — Literal Characters
+# 🔹 Segment 2 — Literal Characters
 # --------------------------------------------------------
 # \b word boundary
 pattern = re.compile(r'\bHa')
@@ -132,7 +139,7 @@ pattern = re.compile(r'^Start')
 pattern = re.compile(r'end$')
 
 # --------------------------------------------------------
-# 🔹 Example 3 — Phone numbers
+# 🔹 Segment 3 — Phone numbers
 # --------------------------------------------------------
 # phone number search
 pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
@@ -150,31 +157,74 @@ pattern = re.compile(r'\d{3}[.-]\d{3}[.-]\d{4}')
 pattern = re.compile(r'Mr')
 pattern = re.compile(r'Mr\.?\s')
 pattern = re.compile(r'Mr\.?\s[A-Z]')
-
-
-
-
+pattern = re.compile(r'Mr\.?\s[A-Z]\w*')
 
 # --------------------------------------------------------
-# 🔹 Example 4 — Range of letters and numbers
+# 🔹 Segment 4 — Range of letters and numbers
 # --------------------------------------------------------
 # phone number search
 pattern1 = re.compile(r'[1-5]')
 pattern1 = re.compile(r'[a-z]')
 pattern1 = re.compile(r'[a-zA-Z]') #matches any of the range of characters
-
 pattern1 = re.compile(r'[^a-zA-Z]') #negates the search with carat character
 pattern1 = re.compile(r'[^b]at') #not be followed by at - bat is excluded
 
+# --------------------------------------------------------
+# 🔹 Segment 5 — Groups ()
+# --------------------------------------------------------
+# group
+pattern = re.compile(r'(Mr|Ms|Mrs)\.?\s[A-Z]\w*')
+pattern = re.compile(r'M(r|s|rs)\.?\s[A-Z]\w*')
+
+#Emails
+pattern = re.compile(r'[a-zA-Z.]+@[a-zA-Z]+\.com')
+pattern = re.compile(r'[a-zA-Z.]+@[a-zA-Z]+\.(com|edu|net)')
+pattern = re.compile(r'[a-zA-Z0-9.-]+@[a-zA-Z-]+\.(com|edu|net)')
+# For all email types
+pattern = re.compile(r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+')
+
+# --------------------------------------------------------
+# 🔹 Segment 6 — URLs - Groups ()
+# --------------------------------------------------------
+# group
+
+urls = '''
+https://www.google.com
+http://coreyms.com
+https://youtube.com
+https://www.nasa.gov
+'''
+
+# For URLs
+pattern = re.compile(r'https?://(www\.)?\w+\.(com|gov)')
+pattern = re.compile(r'[^https?://(www\.)?]\w+\.\w+')
+pattern = re.compile(r'[^https?://(www\.)?](\w+)(\.\w+)')
+pattern = re.compile(r'https?://(www\.)?(\w+)(\.\w+)')
+
+pattern = re.compile(r'\d{3}[.-]\d{3}[.-]\d{4}')
+pattern = re.compile(r'Start')
+
+#Flags
+pattern = re.compile(r'start', re.IGNORECASE) 
+pattern = re.compile(r'start', re.I)
 
 # --------------------------------------------------------
 # Result
 # --------------------------------------------------------
-matches = pattern.finditer(text_to_search)
+#matches = pattern.findall(text_to_search)
+#matches = pattern.finditer(urls)
+#matches = pattern.finditer(emails)
+#matches = pattern.finditer(text_to_search)
 #matches = pattern.finditer(sentence)
+matches = pattern.match(sentence)
+print(matches)
 
-for match in matches:
-    print(match)
+#subbed_urls = pattern.sub(r'\2\3',urls)
+#print(subbed_urls)
+
+# for match in matches:
+#     #print(match.group(3))
+#     print(match)
 
 with open('data.txt','r', encoding='utf-8') as f:
     contents = f.read()
