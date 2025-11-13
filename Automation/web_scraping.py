@@ -13,6 +13,10 @@ Python provides several libraries to make web scraping **efficient, structured, 
 
 ---
 
+### 3. Links
+[Web Scraping - beginner - Tinkernut](https://www.youtube.com/watch?v=QhD015WUMxE&t=240s)
+[Web Scraping - Corey Schafer](https://www.youtube.com/watch?v=ng2o98k983k&t=1406s)
+
 ## ⚙️ Why It’s Important
 - **Automation**: Saves time and effort when collecting large-scale data.  
 - **Integration**: Helps integrate web data into applications, dashboards, or datasets.  
@@ -69,49 +73,49 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 
+# -----------------------------------------------------------------------------------
+# ⚙️ With Simple html
+# -----------------------------------------------------------------------------------
 with open('simple.html') as html_file:
     soup = BeautifulSoup(html_file, 'lxml')
 
 #print(soup)
 #print(soup.prettify())
-print(soup.prettify())
+#print(soup.prettify())
+
 #match = soup.title.text
 match = soup.find('div', class_='footer')
-print(match)
 
-source = requests.get('http://cnn.com').text
+# one article
+article =soup.find('div', class_='article')
+#print('headline article ----',article.h2.a.text)
+#print('article text ----',article.p.text)
 
-soup = BeautifulSoup(source, 'lxml')
-#print(soup.prettify())
-match = soup.title.text
-#print(match)
+# one article
+for article in soup.find_all('div', class_='article'):
+    print('headline article ----',article.h2.a.text)
+    print('article text ----',article.p.text)
 
-csv_file = open('cms_scrape.csv', 'w')
 
-csv_writer = csv.writer(csv_file)
-csv_writer.writerow(['headline', 'summary', 'video_link'])
+# -----------------------------------------------------------------------------------
+# ⚙️ Scraping a website
+# -----------------------------------------------------------------------------------
 
-for article in soup.find_all('article'):
-    headline = article.h2.a.text
-    print(headline)
+#REQUEST WEBPAGE AND STORE IT AS A VARIABLE
+page_to_scrape = requests.get("http://quotes.toscrape.com")
 
-    summary = article.find('div', class_='entry-content').p.text
-    print(summary)
+#USE BEAUTIFULSOUP TO PARSE THE HTML AND STORE IT AS A VARIABLE
+soup = BeautifulSoup(page_to_scrape.text, 'html.parser')
 
-    try:
-        vid_src = article.find('iframe', class_='youtube-player')['src']
+#FIND ALL THE ITEMS IN THE PAGE WITH A CLASS ATTRIBUTE OF 'TEXT'
+#AND STORE THE LIST AS A VARIABLE
+quotes = soup.findAll('span', attrs={'class':'text'})
 
-        vid_id = vid_src.split('/')[4]
-        vid_id = vid_id.split('?')[0]
+#FIND ALL THE ITEMS IN THE PAGE WITH A CLASS ATTRIBUTE OF 'AUTHOR'
+#AND STORE THE LIST AS A VARIABLE
+authors = soup.findAll('small', attrs={"class":"author"})
 
-        yt_link = f'https://youtube.com/watch?v={vid_id}'
-    except Exception as e:
-        yt_link = None
-
-    print(yt_link)
-
-    print()
-
-    csv_writer.writerow([headline, summary, yt_link])
-
-csv_file.close()
+#LOOP THROUGH BOTH LISTS USING THE 'ZIP' FUNCTION
+#AND PRINT AND FORMAT THE RESULTS
+for quote, author in zip(quotes, authors):
+    print(quote.text + "-" + author.text)
