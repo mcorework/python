@@ -17,9 +17,10 @@ It provides a MATLAB-like interface via **`matplotlib.pyplot`**, but also suppor
 ---
 
 ### 3. Links
-[MatPlotLib Documentation- Keith Galli](https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.html)
-[MatPlotLib Video- - Keith Galli](https://www.youtube.com/watch?v=DAQNHzOcO5A&t=268s)
-
+[MatPlotLib Documentatio n- Keith Galli](https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.html)
+[MatPlotLib Github - Keith Galli](https://www.youtube.com/watch?v=DAQNHzOcO5A&t=268s)
+[MatPlotLib Video - Keith Galli - Basic](https://www.youtube.com/watch?v=DAQNHzOcO5A&t=268s)
+[MatPlotLib Video - Keith Galli - Advanced](https://www.youtube.com/watch?v=0P7QnIQDBJY&t=1413s)
 
 ## 🛠️ 2. Basic Usage
 
