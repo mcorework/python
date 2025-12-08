@@ -145,6 +145,14 @@ import random
 # 📌 Sentiment & Review Classes
 # ===============================================================================
 
+
+class Category:
+    ELECTRONICS = "ELECTRONICS"
+    BOOKS = "BOOKS"
+    CLOTHING = "CLOTHING"
+    GROCERY = "GROCERY"
+    PATIO = "PATIO"
+    
 class Sentiment:
     NEGATIVE = "NEGATIVE"
     NEUTRAL = "NEUTRAL"
@@ -287,13 +295,120 @@ train_x_vectors = vectorizer.fit_transform(train_x)
 # For test data, we do not a model, we just need to test it.
 test_x_vectors = vectorizer.transform(test_x)
 
-print(train_x[0])
-print(train_x_vectors[0])
+#print(train_x[0])
+#print(train_x_vectors[0])
 
 
 # -----------------------------------------------------------------------------------
 # ⚙️ 4. Classification
 # -----------------------------------------------------------------------------------
 
+"""
+Classification, in simple terms, is the task of sorting things into categories.
+Google search - Linear SVM MIT
+
+Different Classifiers
+names = ["Nearest Neigbors", "Linear SVM", "RBF SVM", "Gaussian Process", "Decision Tree", 
+         "Random Forest", "Neural Net", "Adaboost", "Naive Bayes", "QDA"]
+
+
+1. Train your model
+2. Running your test data
+3. Seeing what performs better
+
+"""
 # Classification comparision
 # https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html
+
+
+# ⚙️ 1. Linear SVM
+
+from sklearn import svm
+
+clf_svm = svm.SVC(kernel='linear')
+clf_svm.fit(train_x_vectors, train_y)
+
+print(test_x[0])
+print(clf_svm.predict(test_x_vectors[0]))
+
+
+
+# ⚙️ 2. Decision Tree
+
+from sklearn.tree import DecisionTreeClassifier
+
+clf_dec = DecisionTreeClassifier()
+clf_dec.fit(train_x_vectors, train_y)
+
+clf_dec.predict(test_x_vectors[0])
+
+# ⚙️ 3. Naive Bayes (Gaussian)
+
+from sklearn.naive_bayes import GaussianNB
+
+clf_gnb = DecisionTreeClassifier()
+clf_gnb.fit(train_x_vectors, train_y)
+
+clf_gnb.predict(test_x_vectors[0])
+
+# ⚙️ 4. Logistic Regression
+
+from sklearn.linear_model import LogisticRegression
+
+clf_log = LogisticRegression()
+clf_log.fit(train_x_vectors, train_y)
+
+clf_log.predict(test_x_vectors[0])
+
+
+# -----------------------------------------------------------------------------------
+# ⚙️ 5. Evaluation
+# -----------------------------------------------------------------------------------
+
+# Mean Accuracy
+print(clf_svm.score(test_x_vectors, test_y))
+print(clf_dec.score(test_x_vectors, test_y))
+print(clf_gnb.score(test_x_vectors, test_y))
+print(clf_log.score(test_x_vectors, test_y))
+
+# F1 Scores
+# F1 score is a single number that tells you how good your model is at being accurate and not missing important cases.
+from sklearn.metrics import f1_score
+
+f1_score(test_y, clf_svm.predict(test_x_vectors), average=None, labels=[Sentiment.POSITIVE, Sentiment.NEGATIVE])
+#f1_score(test_y, clf_log.predict(test_x_vectors), average=None, labels=[Sentiment.POSITIVE, Sentiment.NEUTRAL, Sentiment.NEGATIVE])
+
+
+test_set = ['very fun', "bad book do not buy", 'horrible waste of time']
+new_test = vectorizer.transform(test_set)
+clf_svm.predict(new_test)
+
+# Tuning our model (with Grid Search)
+from sklearn.model_selection import GridSearchCV
+
+parameters = {'kernel': ('linear', 'rbf'), 'C': (1,4,8,16,32)}
+
+svc = svm.SVC()
+clf = GridSearchCV(svc, parameters, cv=5)
+clf.fit(train_x_vectors, train_y)
+print(clf.score(test_x_vectors, test_y))
+
+# -----------------------------------------------------------------------------------
+# ⚙️ 6. Saving Model
+# -----------------------------------------------------------------------------------
+import pickle
+
+with open('./models/sentiment_classifier.pkl', 'wb') as f:
+    pickle.dump(clf, f)
+
+# Load Model
+with open('./models/entiment_classifier.pkl', 'rb') as f:
+    loaded_clf = pickle.load(f)
+
+print(test_x[0])
+loaded_clf.predict(test_x_vectors[0])
+
+from sklearn.linear_model import Perceptron
+
+clf = Perceptron(tol=1e-3, random_state=0)
+clf.fit(X, y)  
