@@ -21,3 +21,16 @@ print(type({9.8, 3.14, 2.7}))    # Set
 print(type((9.8, 3.14, 2.7)))    # Tuple
 print(type(3 == 3))              # Bool
 print(type(3 >= 3))              # Bool
+
+
+# Interview Quesions
+# Question 1
+
+x = [1,2,3]
+print (x*2)
+
+
+# Question 2
+for i in range(31):
+    pass
+print(i)
