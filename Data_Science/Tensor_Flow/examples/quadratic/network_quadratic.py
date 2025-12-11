@@ -112,7 +112,7 @@ model.compile(
 # ------------------------------------------------------------------------------
 # Combine x and y columns to form a 2D input array: (num_samples, 2)
 x_train = np.column_stack((train_df.x.values, train_df.y.values))
-
+cd 
 y_train = train_df.color.values  # Labels
 
 
